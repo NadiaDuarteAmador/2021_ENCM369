@@ -97,14 +97,14 @@ void UserAppRun(void)
     static u32 u32ButtonState=0;
     u32 u32Counter;
    
-    for (u32Counter=1; u32Counter<=64; u32Counter++) 
+    for (u32Counter=1; u32Counter<=64; u32Counter++)          /*Will count from LATA 0x80 to LATA 0xFF*/
     {
     if ( ((PORTB & 0x20) == 0x20) && (u32ButtonState == 0))
     {
-        LATA++;
+        LATA++;                                               /*Increments LATA to keep counting*/
         u32ButtonState=1;
     }
-    if ( ((PORTB & 0x20) == 0x00) && (u32ButtonState == 1))
+    if ( ((PORTB & 0x20) == 0x00) && (u32ButtonState == 1))  /*If button state is 1, it will become 0 to start from the top of the loop and continue the count.*/
     {
         u32ButtonState=0;
     }
