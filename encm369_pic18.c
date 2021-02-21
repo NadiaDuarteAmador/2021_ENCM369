@@ -88,16 +88,16 @@ Promises:
 */
 void GpioSetup(void)
 {
-    LATA=0x00;
-    PORTA=0x00;
-    TRISA=0x00;
-    ANSELA=0x00;
-    LATA=0x80;
+    LATA=0x00;    /*Clear latch.*/
+    PORTA=0x00;   /*Clear register.*/
+    TRISA=0x00;   /*RA outputs.*/
+    ANSELA=0x00;  /*Digital.*/
+    LATA=0x80;    /*Keep last LED ON all time*/
    
-    LATB=0x00;
-    PORTB=0x00;
-    TRISB=0x30;
-    ANSELB=0x00;
+    LATB=0x00;    /*Clear latch.*/
+    PORTB=0x00;   /*Clear register.*/
+    TRISB=0x30;   /* Make RB4 and RB5 the only inputs.*/
+    ANSELB=0x00;  /*Digital.*/
     
     
     
